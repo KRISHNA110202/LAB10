@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff; /* White Color */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .title-box {
+            background-color: #28a745; /* Green Color */
+            color: white;
+            padding: 10px 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold; /* Bold Format */
+        }
+
+        #sentence {
+            width: 100%; /* Adjusted width to fit within the container */
+            max-width: 300px; /* Added max-width to prevent stretching */
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #28a745; /* Green Color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h2 {
+            margin-top: 20px;
+            background-color: #28a745; /* Green Color */
+            color: white;
+            padding: 5px 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        p.result {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold; /* Bold Format */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-box">
+            <h1>Sentiment Analysis</h1>
+        </div>
+        <form action="/analyze" method="post">
+            <label for="sentence"><strong>Enter a sentence:</strong></label><br>
+            <input type="text" id="sentence" name="sentence"><br><br>
+            <input type="submit" value="Analyze">
+        </form>
+        <h2>Analysis Result:</h2>
+        <p class="result" style="color: {{ result_color }}">{{ result }}</p>
+    </div>
+</body>
+</html>
